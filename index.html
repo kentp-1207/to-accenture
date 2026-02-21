@@ -24,7 +24,6 @@
     overflow-x: hidden;
   }
 
-  /* Yellow line decoration */
   .line-deco {
     position: fixed;
     top: 0; bottom: 0;
@@ -36,7 +35,6 @@
   .line-left { left: 40px; }
   .line-right { right: 40px; }
 
-  /* Hero */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -119,8 +117,7 @@
     margin-bottom: 8px;
     text-transform: uppercase;
   }
-
-  /* Section base */
+/* Section base */
   section {
     padding: 100px 100px;
     position: relative;
@@ -342,86 +339,6 @@
     font-size: 12px;
     color: var(--yellow);
   }
-
-  /* Letter section */
-  .letter-section {
-    background: var(--gray);
-  }
-
-  .letter-body {
-    max-width: 700px;
-    font-size: 16px;
-    line-height: 2;
-    color: rgba(240,237,230,0.85);
-    font-weight: 300;
-  }
-
-  .letter-body strong {
-    color: var(--white);
-    font-weight: 700;
-  }
-
-  .letter-body .highlight {
-    color: var(--yellow);
-  }
-
-  .letter-sign {
-    margin-top: 64px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .letter-sign-line {
-    width: 60px;
-    height: 2px;
-    background: var(--yellow);
-  }
-
-  .letter-sign-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    color: var(--white);
-    letter-spacing: 3px;
-  }
-
-  /* Footer */
-  footer {
-    padding: 48px 100px;
-    background: var(--black);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(245,196,0,0.2);
-  }
-
-  footer .footer-name {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    color: rgba(240,237,230,0.3);
-    letter-spacing: 3px;
-  }
-
-  footer .footer-note {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: rgba(245,196,0,0.5);
-    letter-spacing: 2px;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 768px) {
-    .line-left { left: 16px; }
-    .line-right { right: 16px; }
-    .hero, section, footer { padding-left: 40px; padding-right: 40px; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .project-grid { grid-template-columns: 1fr; }
-    .skill-item { grid-template-columns: 1fr; }
-  }
 </style>
 </head>
 <body>
@@ -536,30 +453,59 @@
 <section class="projects-section">
   <div class="section-label">Projects — 開発実績</div>
   <div class="project-grid">
+
+    <!-- AI Agent -->
     <div class="project-item">
       <div class="project-tag">AI Agent</div>
       <div class="project-title">自立型AIエージェント</div>
-      <div class="project-desc">Gemini APIを活用した業務自動化エージェント。画像分析・自動リトライ機能付き。業務課題から発想し、設計・実装・公開まで一人で完結。</div>
-      <div class="project-result">→ GitHub公開済み</div>
+      <div class="project-desc">
+        Gemini APIを活用した業務自動化エージェント。画像分析・自動リトライ機能付き。
+        業務課題から発想し、設計・実装・公開まで一人で完結。
+      </div>
+      <div class="project-result">
+        → <a href="https://github.com/kentp-1207/ArgoEmpire-MobileAI" target="_blank" style="color: var(--yellow);">GitHub公開済み</a>
+      </div>
     </div>
+
+    <!-- SemanticOS -->
     <div class="project-item">
       <div class="project-tag">NLP / Search</div>
       <div class="project-title">SemanticOS</div>
-      <div class="project-desc">PythonとTF-IDFを使った意味検索システム。テキストをメモリとして蓄積し、類似度でインテリジェント検索を実現。将来的にメンタルヘルスアプリの基盤として構想中。</div>
-      <div class="project-result">→ GitHub公開済み</div>
+      <div class="project-desc">
+        PythonとTF-IDFを使った意味検索システム。テキストをメモリとして蓄積し、
+        類似度でインテリジェント検索を実現。将来的にメンタルヘルスアプリの基盤として構想中。
+      </div>
+      <div class="project-result">
+        → <a href="https://github.com/kentp-1207/SemanticOS" target="_blank" style="color: var(--yellow);">GitHub公開済み</a>
+      </div>
     </div>
+
+    <!-- Business DX -->
     <div class="project-item">
       <div class="project-tag">Business DX</div>
       <div class="project-title">月次業務自動化</div>
-      <div class="project-desc">Power Queryで日報データを作業員別・帳簿に自動反映。属人的なアナログ作業をデータドリブンな仕組みに変換。</div>
-      <div class="project-result">→ 月次締め作業85%削減（年間102時間効率化）</div>
+      <div class="project-desc">
+        Power Queryで日報データを作業員別・帳簿に自動反映。
+        属人的なアナログ作業をデータドリブンな仕組みに変換。
+      </div>
+      <div class="project-result">
+        → 月次締め作業85%削減（年間102時間効率化）
+      </div>
     </div>
+
+    <!-- Vision -->
     <div class="project-item">
       <div class="project-tag">Vision</div>
       <div class="project-title">次の構想</div>
-      <div class="project-desc">対話を通じて精神状態を数値化し、鬱になる前に警告を出すメンタルヘルスアプリ。「誰も気にかけないことを気にかけてくれる優しいAI」として設計中。</div>
-      <div class="project-result">→ SemanticOSが基盤技術として機能予定</div>
+      <div class="project-desc">
+        対話を通じて精神状態を数値化し、鬱になる前に警告を出すメンタルヘルスアプリ。
+        「誰も気にかけないことを気にかけてくれる優しいAI」として設計中。
+      </div>
+      <div class="project-result">
+        → SemanticOSが基盤技術として機能予定
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -567,25 +513,15 @@
 <section class="letter-section">
   <div class="section-label">To Accenture</div>
   <div class="letter-body">
-    <p>
-      私がアクセンチュアに惹かれた理由は、<strong>「壁の先まで見えている人たちが集まっている」</strong>からです。
-    </p>
+    <p>私がアクセンチュアに惹かれた理由は、<strong>「壁の先まで見えている人たちが集まっている」</strong>からです。</p>
     <br>
-    <p>
-      これまで私は、バックオフィス全般を一人で担う環境の中で、誰かに言われたからではなく、<strong>自分で課題を見つけ、自分でAIを学び、自分で数字を出してきました。</strong>それは正しいことだったと今でも思っています。
-    </p>
+    <p>これまで私は、バックオフィス全般を一人で担う環境の中で、誰かに言われたからではなく、<strong>自分で課題を見つけ、自分でAIを学び、自分で数字を出してきました。</strong></p>
     <br>
-    <p>
-      ただ、一人でできることには限界があります。私の取り組みが、もっと大きなインパクトに繋がる場所で働きたい。そう思ったとき、選択肢は明確でした。
-    </p>
+    <p>ただ、一人でできることには限界があります。私の取り組みが、もっと大きなインパクトに繋がる場所で働きたい。そう思ったとき、選択肢は明確でした。</p>
     <br>
-    <p>
-      <span class="highlight">貴社はGenAIの新規受注が通期59億ドルを超え、世界規模でクライアントの変革を推進しています。</span>私が独学で実装してきたGemini APIやPythonのスキルは、まだ小さいかもしれない。でも、<strong>「業務課題を自分で発見し、AIで解決し、数字で証明する」</strong>というサイクルは、貴社の現場で必ず力になれると確信しています。
-    </p>
+    <p><span class="highlight">貴社はGenAIの新規受注が通期59億ドルを超え、世界規模でクライアントの変革を推進しています。</span></p>
     <br>
-    <p>
-      私のビジョンは、<strong>「全ての労働者がやりがいを感じて、正当に評価される世の中を作ること」</strong>です。それを実現するための実践力を、世界で最もAIを活用している貴社で身につけたい。そして、必ず貢献します。
-    </p>
+    <p>私のビジョンは、<strong>「全ての労働者がやりがいを感じて、正当に評価される世の中を作ること」</strong>です。</p>
   </div>
   <div class="letter-sign">
     <div class="letter-sign-line"></div>
