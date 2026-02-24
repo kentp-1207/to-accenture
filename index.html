@@ -343,8 +343,111 @@
     color: var(--yellow);
   }
 
-  /* Letter section */
-  .letter-section {
+  /* Thinking Framework */
+  .thinking-section { background: var(--black); }
+
+  .tri-step {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .tri-step-item {
+    padding: 40px 48px;
+    background: var(--gray);
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .tri-step-item:hover { background: #222; }
+
+  .tri-step-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: rgba(245,196,0,0.2);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .tri-step-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .tri-step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .tri-step-desc {
+    font-size: 13px;
+    color: rgba(240,237,230,0.6);
+    line-height: 1.8;
+  }
+
+  .thinking-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .thinking-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--yellow);
+    border: 1px solid rgba(245,196,0,0.3);
+    padding: 6px 14px;
+    letter-spacing: 1px;
+  }
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Counter animation */
+  .stat-number { cursor: default; }
+
+  /* Accordion for Tri-Step */
+  .tri-step-item {
+    cursor: pointer;
+  }
+  .tri-step-desc {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+  .tri-step-item.open .tri-step-desc {
+    max-height: 200px;
+    opacity: 1;
+  }
+  .tri-step-item.open { background: #222; }
+  .tri-step-arrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(245,196,0,0.5);
+    margin-top: 16px;
+    display: block;
+    letter-spacing: 2px;
+  }
+  .tri-step-item.open .tri-step-arrow {
+    display: none;
+  }
+
     background: var(--gray);
   }
 
@@ -540,13 +643,13 @@
       <div class="project-tag">AI Agent</div>
       <div class="project-title">自立型AIエージェント</div>
       <div class="project-desc">Gemini APIを活用した業務自動化エージェント。画像分析・自動リトライ機能付き。業務課題から発想し、設計・実装・公開まで一人で完結。</div>
-      <div class="project-result">→ <a href="https://github.com/kentp-1207/ArgoEmpire-MobileAI" target="_blank" style="color:var(--yellow);text-decoration:none;">GitHub公開済み</a></div>
+      <div class="project-result">→ GitHub公開済み</div>
     </div>
     <div class="project-item">
       <div class="project-tag">NLP / Search</div>
       <div class="project-title">SemanticOS</div>
       <div class="project-desc">PythonとTF-IDFを使った意味検索システム。テキストをメモリとして蓄積し、類似度でインテリジェント検索を実現。将来的にメンタルヘルスアプリの基盤として構想中。</div>
-      <div class="project-result">→ <a href="https://github.com/kentp-1207/SemanticOS" target="_blank" style="color:var(--yellow);text-decoration:none;">GitHub公開済み</a></div>
+      <div class="project-result">→ GitHub公開済み</div>
     </div>
     <div class="project-item">
       <div class="project-tag">Business DX</div>
@@ -560,6 +663,41 @@
       <div class="project-desc">対話を通じて精神状態を数値化し、鬱になる前に警告を出すメンタルヘルスアプリ。「誰も気にかけないことを気にかけてくれる優しいAI」として設計中。</div>
       <div class="project-result">→ SemanticOSが基盤技術として機能予定</div>
     </div>
+  </div>
+</section>
+
+<!-- Thinking Framework -->
+<section class="thinking-section">
+  <div class="section-label">Thinking — Tri-Step Model</div>
+  <div class="tri-step">
+    <div class="tri-step-item">
+      <div class="tri-step-number">01</div>
+      <div class="tri-step-label">STEP 1</div>
+      <div class="tri-step-title">Phenomenon</div>
+      <div class="tri-step-arrow">▶ タップして展開</div>
+      <div class="tri-step-desc">起きた事象をそのまま受け取らず、「どこに違和感があるか」を最初に検出する。表面ではなく、構造の乱れを感じ取る段階。</div>
+    </div>
+    <div class="tri-step-item">
+      <div class="tri-step-number">02</div>
+      <div class="tri-step-label">STEP 2</div>
+      <div class="tri-step-title">Causality</div>
+      <div class="tri-step-arrow">▶ タップして展開</div>
+      <div class="tri-step-desc">現象を引き起こした要素同士の関係を読み解く。因果の連続性・断絶・順序を自然に追跡する。</div>
+    </div>
+    <div class="tri-step-item">
+      <div class="tri-step-number">03</div>
+      <div class="tri-step-label">STEP 3</div>
+      <div class="tri-step-title">Structure / OS</div>
+      <div class="tri-step-arrow">▶ タップして展開</div>
+      <div class="tri-step-desc">因果を生む仕組みそのものを特定する。インセンティブ・前提条件・メタ構造まで掘り下げる。ここが思考のホーム。</div>
+    </div>
+  </div>
+  <div class="thinking-tags">
+    <div class="thinking-tag">感情より因果</div>
+    <div class="thinking-tag">結果より構造</div>
+    <div class="thinking-tag">行動よりOS</div>
+    <div class="thinking-tag">表面よりメタ</div>
+    <div class="thinking-tag">違和感がトリガー</div>
   </div>
 </section>
 
@@ -599,5 +737,63 @@
   <div class="footer-note">GitHub公開中</div>
 </footer>
 
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.dna-item, .stat-item, .skill-item, .project-item, .tri-step-item, .letter-body');
+  revealEls.forEach(el => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Counter animation for stats
+  function animateCounter(el, target, suffix) {
+    let start = 0;
+    const duration = 1500;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const val = Math.floor(progress * target);
+      el.textContent = val + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    };
+    requestAnimationFrame(step);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const numEl = entry.target.querySelector('.stat-number');
+        if (numEl && !numEl.dataset.animated) {
+          numEl.dataset.animated = true;
+          const text = numEl.textContent;
+          if (text.includes('85')) animateCounter(numEl, 85, '%');
+          else if (text.includes('6')) animateCounter(numEl, 6, '名');
+          else if (text.includes('10')) animateCounter(numEl, 10, '+');
+        }
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-item').forEach(el => statObserver.observe(el));
+
+  // Accordion for Tri-Step
+  document.querySelectorAll('.tri-step-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.tri-step-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
 </body>
 </html>
